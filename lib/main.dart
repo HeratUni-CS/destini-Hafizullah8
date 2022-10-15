@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:destini/story_brain.dart';
 import 'package:flutter/material.dart';
 
@@ -58,11 +60,12 @@ class _StoryPageState extends State<StoryPage> {
                 flex: 2,
                 child: TextButton(
                   onPressed: () {
+                    setState(() {
+                      first.nextStory(Random().nextInt(6));
+                    });
                     //Choice 1 made by user.
                     //TODO: Step 18 - Call the nextStory() method from storyBrain and pass the number 1 as the choice made by the user.
-                     setState(() {
-                       first.nextStory(1);
-                     });
+
                   },
                   style: TextButton.styleFrom(backgroundColor: Colors.red),
                   child: Text(
@@ -89,7 +92,7 @@ class _StoryPageState extends State<StoryPage> {
                       //Choice 2 made by user.
                       //TODO: Step 19 - Call the nextStory() method from storyBrain and pass the number 2 as the choice made by the user.
                       setState(() {
-                        first.nextStory(2);
+                        first.nextStory(Random().nextInt(6));
                       });
                     },
                     style: TextButton.styleFrom(backgroundColor: Colors.blue),

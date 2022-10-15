@@ -1,4 +1,6 @@
 //TODO: Step 6 - import the story.dart file into this file.
+import 'dart:math';
+
 import 'package:destini/story.dart';
 
 //TODO: Step 5 - Create a new class called StoryBrain.
@@ -47,13 +49,16 @@ class StoryBrain {
   }
  void nextStory(int choiceNumber){
     if(choiceNumber==1 && _storyNumber==0){
-      _storyNumber=1;
-    }
-    else if(choiceNumber==2 && _storyNumber==1){
       _storyNumber=2;
+
+    }else if(choiceNumber==2 && _storyNumber==0){
+       _storyNumber=3;
     }
-    else if(_storyNumber==3 || _storyNumber==4 || _storyNumber==5){
+    else if((choiceNumber==3 || choiceNumber==4 || choiceNumber==5)&& _storyNumber==0){
        restart();
+    }
+    else{
+      restart();
     }
 
   }
